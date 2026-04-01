@@ -43,7 +43,10 @@ calculo = (calculo2 * qnt_pessoas)
 print(calculo)
 
 # Parte 3: Regras da Agência (SEM if, SEM loop)
-
+existir = destino in viagens
+s = True
+s1 = False
+exist = destino != existir and print('digite algo valido!')
 # Aplique:
 # Se pessoas > 3 → desconto de 10%
 desconto_de_dez = calculo * 0.1 
@@ -62,16 +65,17 @@ desconto_total = desconto and desconto_extra and print('valor com todos os desco
 vagas = (viagens[destino]['vagas'])
 pessoas = qnt_pessoas > vagas
 
-
+asd = (not desconto_total == s1 or not desconto_total2 == s1 or not desconto_total3 == s1)
 desconto = qnt_pessoas > 3
-p = (pessoas, ('overbooking'))
+p = pessoas and print('overbooking')
 print(p)
-taxa = pessoas and print('valor total por overbooking', desconto_total + 500)
+taxa = pessoas and print('valor total por overbooking', asd)
+final = taxa and desconto_total + 500 
 
 # Se destino não existir → valor vira 0
 
-inexistente = destino != 'Paris' or 'Tokyo' or 'Nova York'
-existir = inexistente and print('Digite algo valido!!!')
+destino_ex = (input('Digite o destino> ') in viagens  ) * calculo  
+print('Valor total R$ ', destino_ex)
 
 
 
