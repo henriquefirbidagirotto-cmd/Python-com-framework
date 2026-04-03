@@ -22,7 +22,7 @@ ver_n = not vip == 'sim' or not valor_compra > 200 or not mes == 'sim'
 pri = ver == True and print('Cupom liberado')
 pri1 = not ver == True and print('Sem cupom')
 
-valor_compra2 = valor_compra * 0.5
+valor_compra2 = (valor_compra * 0.5)
 
 conta = ver == True or h == True and print(valor_compra2) 
 
@@ -30,5 +30,7 @@ valor_final = pri == True and print(valor_compra * 0.5)
 
 sem_cupom = not conta == True and print(valor_compra)
 
+valorfin = pri == True or ver == True and print('valor:R$',valor_compra * 0.5)
+valorfinsemcupom = not pri == True or not ver == True and print('valor:R$',valor_compra * 0.5)
 
 recla = str(input('Possui alguma reclamação? '))
