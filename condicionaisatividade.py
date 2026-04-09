@@ -197,66 +197,31 @@ import random
 
 
 # 10
-valor  =  int(input('R$: '))
 
 # valor entre 10 e 1000
 # # 50, 20, 10, 5
 
+v = int(input('>>'))
 
-l = [5,10,20,50]
-
-if valor % 5 == 0:
-
-    if valor == 10:
-        quatidade_notas =  1
-        print('R$', quatidade_notas)   
-    elif valor  == 20 :
-        quatidade_notas =  1
-        print('R$', quatidade_notas)   
-    elif valor == 50:
-        quatidade_notas =  1
-        print('R$', quatidade_notas)
-    elif valor > 50:
-         quantidade_notas_50 = valor // 50
-         print(quantidade_notas_50,'notas de R$ 50')
-         if quantidade_notas_50 * valor < valor:
-             resto = quantidade_notas_50 -  valor
-             print(resto)       
-        
-#          print(quantidade_notas_50)
-#          quantidade_notas_20 = valor//20
-#          print(quantidade_notas_20)
-#          quantidade_notas_10 =  valor // 10
-#          print(quantidade_notas_10)
-#          quantidade_notas_5 =  valor // 5
-#          print(quantidade_notas_5)
-
-#          if quantidade_notas_50 * valor + quantidade_notas_20 * valor == valor:
-#              print('Quantidade de notas 20 - ', quantidade_notas_20, '50')
-#              print('Quantidade de notas 50 - ', quantidade_notas_50, '20')
-#          elif quantidade_notas_50 * valor + quantidade_notas_20 * valor + quantidade_notas_10 * valor == valor:    
-#              print('Quantidade de notas 20 - ', quantidade_notas_20)
-#              print('Quantidade de notas 50 - ', quantidade_notas_50)
-#          elif quantidade_notas_50 * valor + quantidade_notas_20 * valor + quantidade_notas_10 * valor + quantidade_notas_5 *5 == valor :   
-#              print('Quantidade de notas 20 - ', quantidade_notas_20)
-#              print('Quantidade de notas 50 - ', quantidade_notas_50)         
-#              print('Quantidade de notas 20 - ', quantidade_notas_10)
-#              print('Quantidade de notas 5 - ', quantidade_notas_5)
-         
-     
-
-
-         
-        
+if v < 10 or v > 1000 or v % 5 != 0:
+    print('invalida')
 else:
-    print('Erro ...')        
+    p50 = v // 50
+    v  =  v % 50
 
+    p20 = v // 20
+    v  =  v % 20
 
+    p10 = v // 10
+    v  =  v % 10
 
-# # if valor % 10 and valor % 5 and valor % 50 and valor % 10:
-# #     quantidade =  
-# #     print()
+    p5 = v // 5
+    v  =  v % 5    
 
+    print('notas de 50', p50)
+    print('notas de 20', p20)
+    print('notas de 10', p10)
+    print('notas de 5', p5)
 
 
     
