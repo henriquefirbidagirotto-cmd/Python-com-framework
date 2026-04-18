@@ -4,16 +4,16 @@
 # ` que exiba `"Olá, meu nome é [nome] e -tenho [idade] anos.
 # "` Crie duas pessoas diferentes e chame o método.
 
-# class pessoa:
-#     def __init__(self, nome, idade):
-#         self.nome = nome
-#         self.idade = idade
+class pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
 
-#     def apresentação(self):
-#         print('meu nome é',self.nome, 'e tenho', self.idade, 'idade')
+    def apresentação(self):
+        print('meu nome é',self.nome, 'e tenho', self.idade, 'idade')
 
-# pessoa1 = pessoa('Henrique', 17)
-# pessoa1.apresentação()
+pessoa1 = pessoa('Henrique', 17)
+pessoa1.apresentação()
 
 
 # ---
@@ -27,21 +27,21 @@
     
 #     Crie um retângulo com largura 5 e altura 3 e exiba sua área e perímetro.
     
-# class retângulo:
-#     def __init__(self, largura, altura):
-#         self.largura = largura
-#         self.altura = altura
-#         self.calcular_area = (self.largura * self.altura )
-#         self.calcular_perimetro = (self.largura *2)+(self.altura*2)
+class retângulo:
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+        self.calcular_area = (self.largura * self.altura )
+        self.calcular_perimetro = (self.largura *2)+(self.altura*2)
 
-#     def apresentar(self):
-#         print('A area do retangulo é', self.calcular_area, 'e o perimetro é', self.calcular_perimetro)
+    def apresentar(self):
+        print('A area do retangulo é', self.calcular_area, 'e o perimetro é', self.calcular_perimetro)
 
-# largura = int(input('Largura: '))
-# altura = int(input('Perimetro: '))
+largura = int(input('Largura: '))
+altura = int(input('Perimetro: '))
 
-# apresen = retângulo(largura, altura)
-# apresen.apresentar()
+apresen = retângulo(largura, altura)
+apresen.apresentar()
         
 
 # ---
@@ -58,34 +58,37 @@
         
 #         Crie uma conta, faça depósitos e saques e exiba o saldo.
         
-# class ContaBancária:
-#     def __init__(self, titular, saldo):
-#         self.titular = titular
-#         self.saldo = saldo
+class ContaBancária:
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
 
-#     def visual(self):
-#         print('Conta bancaria: ')
-#         print('''
-#             1- depositar
-#             2- sacar
-#             3- exibir saldo
-#         ''')
-#         resp = int(input('--> '))
-#         if resp == 1:
-#             self.dep = float(input('Depositar: '))
-#             self.saldo = self.saldo + self.dep
-#             return 'saldo:', self.saldo
-#         elif resp == 2:
-#             self.saque = float(input('Saque: '))
-#             self.saldo = self.saldo - self.saque
-#             return'saldo:', self.saldo
-#         elif resp == 3:
-#             return self.saldo
-#         else:
-#             print('Erro, tente novamnete')
+    def visual(self):
+        print('Conta bancaria: ')
+        print('''
+            1- depositar
+            2- sacar
+            3- exibir saldo
+        ''')
+        resp = int(input('--> '))
+        if resp == 1:
+            self.dep = float(input('Depositar: '))
+            self.saldo = self.saldo + self.dep
+            return 'saldo:', self.saldo
+        elif resp == 2:
+            self.saque = float(input('Saque: '))
+            if self.saque <= self.saldo:
+                self.saldo = self.saldo - self.saque
+                return'saldo:', self.saldo
+            else:
+                return 'Saldo insuficiente'   
+        elif resp == 3:
+            return self.saldo
+        else:
+            print('Erro, tente novamnete')
 
-# saldo = ContaBancária('skibiridon', 0)
-# print(saldo.visual())
+saldo = ContaBancária('skibiridon', 0)
+print(saldo.visual())
 
 # ---
 
